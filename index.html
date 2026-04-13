@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mastering Claude Cowork — Builders Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="presentation-wrapper">
+
+<!-- ============================================
+     SIDEBAR
+     ============================================ -->
+<nav class="sidebar" id="sidebar"></nav>
+
+<!-- ============================================
+     MAIN SLIDE AREA
+     ============================================ -->
+<div class="main-area">
+<div class="progress-bar" id="progressBar"></div>
+<div class="deck" id="deck">
+
+<!-- SLIDE 1: Title -->
+<section class="slide slide-title" data-title="Title">
+  <div class="split" style="height:100%">
+    <div class="left-panel">
+      <div class="animate-in" style="width:40px;height:3px;background:var(--orange);border-radius:2px;margin-bottom:32px"></div>
+      <h1 class="animate-in" style="font-size:clamp(48px,5.5vw,76px);font-weight:800;line-height:1.0;letter-spacing:-0.03em">
+        Mastering<br><span class="text-orange">Claude Cowork</span>
+      </h1>
+      <p class="animate-in body-large" style="margin-top:24px;color:var(--mid-gray)">Building Autonomous AI Workflows</p>
+    </div>
+    <div class="right-panel">
+      <h3 class="animate-in title-medium" style="margin-bottom:28px">Workshop Objectives</h3>
+      <div class="animate-in v-stack gap-24">
+        <div class="h-stack gap-12 items-center">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0"></div>
+          <p class="body-medium">Understand the shift from passive chatbots to autonomous systems.</p>
+        </div>
+        <div class="h-stack gap-12 items-center">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0"></div>
+          <p class="body-medium">Master the building blocks: markdown brain, connectors, and skills.</p>
+        </div>
+        <div class="h-stack gap-12 items-center">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0"></div>
+          <p class="body-medium">Practice 3 production-ready workflows for your team.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 2: Hi I'm Amitay -->
+<section class="slide" data-title="Hi I'm Amitay">
+  <div class="split">
+    <div>
+      <h1 class="animate-in display-medium" style="margin-bottom:12px">Hi, I'm Amitay</h1>
+      <p class="animate-in body-large text-orange" style="margin-bottom:32px">Generative AI Consultant and Lecturer</p>
+      <div class="animate-in v-stack gap-12" style="max-width:500px">
+        <p class="body-medium">Formerly PM, Naval Officer, MBA</p>
+        <p class="body-medium">Obsessed with testing and using AI tools</p>
+        <p class="body-medium">Create content about AI on LinkedIn</p>
+      </div>
+      <div class="animate-in" style="margin-top:40px">
+        <img src="assets/screenshots/image61.png" alt="Builders Lab logo" style="height:64px">
+      </div>
+    </div>
+    <div class="animate-in" style="display:flex;align-items:center;justify-content:center">
+      <img src="assets/screenshots/image159.png" alt="LinkedIn profile" class="screenshot" style="max-width:560px;max-height:70vh">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 3: Logo Wall -->
+<section class="slide" data-title="60+ Companies">
+  <div class="center-content">
+    <p class="animate-in body-large" style="margin-bottom:40px">Helped teams from <strong>60+ companies</strong> integrate AI into their work:</p>
+    <div class="animate-in" style="max-width:900px">
+      <img src="assets/screenshots/image14.png" alt="Company logos" style="max-width:100%;border-radius:12px">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 4: Today's Agenda -->
+<section class="slide" data-title="Agenda">
+  <div class="section-marker animate-in">Workshop Structure</div>
+  <h1 class="animate-in display-medium" style="margin-bottom:8px">Today's Agenda</h1>
+  <p class="animate-in body-large text-gray" style="margin-bottom:48px">From foundational concepts to hands-on mastery</p>
+  <div class="animate-in grid-4">
+    <div class="card" style="padding:24px;text-align:center">
+      <div class="num-badge" style="margin:0 auto 16px">1</div>
+      <h4 style="font-size:18px;font-weight:700;margin-bottom:4px">The Context</h4>
+      <p class="body-small" style="margin-bottom:8px">Evolution & Shifts</p>
+      <p style="font-size:12px;color:var(--orange);font-weight:600">20 Min</p>
+    </div>
+    <div class="card" style="padding:24px;text-align:center">
+      <div class="num-badge" style="margin:0 auto 16px;background:var(--blue)">2</div>
+      <h4 style="font-size:18px;font-weight:700;margin-bottom:4px">How It Works</h4>
+      <p class="body-small" style="margin-bottom:8px">Technical Deep Dive</p>
+      <p style="font-size:12px;color:var(--orange);font-weight:600">20 Min</p>
+    </div>
+    <div class="card" style="padding:24px;text-align:center">
+      <div class="num-badge" style="margin:0 auto 16px;background:var(--green)">3</div>
+      <h4 style="font-size:18px;font-weight:700;margin-bottom:4px">Use Cases</h4>
+      <p class="body-small" style="margin-bottom:8px">3 Practical Workflows</p>
+      <p style="font-size:12px;color:var(--orange);font-weight:600">40 Min</p>
+    </div>
+    <div class="card" style="padding:24px;text-align:center">
+      <div class="num-badge" style="margin:0 auto 16px;background:var(--mid-gray)">4</div>
+      <h4 style="font-size:18px;font-weight:700;margin-bottom:4px">Your Turn</h4>
+      <p class="body-small" style="margin-bottom:8px">Hands-on Practice</p>
+      <p style="font-size:12px;color:var(--orange);font-weight:600">40 Min</p>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 5: 46,782 (with step: reveal screenshot) -->
+<section class="slide" data-title="46,782 AI Tools">
+  <div class="center-content">
+    <h1 class="animate-in" style="font-weight:900;font-size:clamp(80px,12vw,180px);letter-spacing:-0.04em;line-height:0.9;transition:transform 0.6s ease" id="big-number">46,782</h1>
+    <div data-step="1" style="margin-top:24px;position:relative;display:inline-block;max-width:700px">
+      <img src="assets/screenshots/image63.png" alt="TAAFT - There's an AI for That" class="screenshot" style="max-width:100%">
+      <div style="position:absolute;top:30%;left:22%;width:56%;height:12%;border:4px solid var(--orange);border-radius:12px;pointer-events:none"></div>
+    </div>
+    <p data-step="1" class="body-large" style="margin-top:16px"><strong>46,782</strong> AI tools — and counting</p>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 6: FOMA (with step animation) -->
+<section class="slide" data-title="FOMA">
+  <div class="center-content">
+    <h1 class="animate-in" style="font-weight:900;font-size:clamp(100px,16vw,240px);letter-spacing:-0.04em;line-height:0.9">FOMA</h1>
+    <p data-step="1" style="margin-top:32px;font-size:clamp(24px,3vw,40px);font-weight:600">
+      <strong>F</strong>ear <strong>O</strong>f <strong>M</strong>issing <strong>A</strong>I
+    </p>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- ========== HOW LLMs WORK (exact from PPTX) ========== -->
+
+<!-- Slide: How LLMs Work? -->
+<section class="slide" data-title="How LLMs Work?">
+  <div class="center-content">
+    <h1 class="animate-in" style="font-weight:800;font-size:clamp(40px,5vw,64px)">How LLMs Work?</h1>
+    <p class="animate-in" style="font-size:clamp(24px,3vw,40px);font-weight:400;margin-top:16px">(In one sentence)</p>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Slide: LLMs predict the next token -->
+<section class="slide" data-title="Next Token Prediction">
+  <div class="center-content">
+    <h1 class="animate-in" style="font-weight:800;font-size:clamp(32px,4vw,52px);max-width:700px">LLMs predict the next token in a sentence</h1>
+    <p data-step="1" style="margin-top:40px;font-size:clamp(20px,2.5vw,36px);font-weight:400">1 token ≈ <span class="text-orange" style="font-style:italic;font-weight:600">¾ of a word</span></p>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Slide: LLMs are like a sophisticated autocomplete -->
+<section class="slide" data-title="Like Autocomplete">
+  <div class="split" style="gap:0">
+    <div style="background:rgba(232,230,220,0.5);display:flex;flex-direction:column;justify-content:center;padding:60px 60px;height:100%">
+      <h1 class="animate-in" style="font-weight:800;font-size:clamp(28px,3.5vw,48px);line-height:1.15">LLMs are like a<br><span class="text-orange">sophisticated<br>autocomplete</span></h1>
+    </div>
+    <div class="animate-in" style="display:flex;align-items:center;justify-content:center;overflow:hidden;height:100%">
+      <img src="assets/screenshots/llm-image8.png" alt="Phone autocomplete" style="max-height:85vh;width:auto;object-fit:contain">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Slide: Pre Training Process -->
+<section class="slide" data-title="Pre Training Process">
+  <h1 class="animate-in" style="font-weight:800;font-size:clamp(28px,3.5vw,48px);text-align:center;margin-bottom:40px">Pre Training Process</h1>
+  <div class="h-stack items-center justify-center" style="gap:40px;max-width:1000px;margin:0 auto">
+    <div data-step="1" class="v-stack gap-24" style="min-width:200px">
+      <p style="font-weight:800;font-size:15px;line-height:1.4">A Chunk from the<br>internet ~10TB of<br>text</p>
+      <div class="v-stack gap-20">
+        <div class="h-stack gap-12 items-center">
+          <img src="assets/screenshots/llm-image3.png" alt="GitHub" style="height:64px">
+          <span class="flow-arrow" style="font-size:20px;padding:0">→</span>
+        </div>
+        <div class="h-stack gap-12 items-center">
+          <img src="assets/screenshots/llm-image1.png" alt="Reddit" style="height:64px">
+          <span class="flow-arrow" style="font-size:20px;padding:0">→</span>
+        </div>
+        <div class="h-stack gap-12 items-center">
+          <img src="assets/screenshots/llm-image5.png" alt="Wikipedia" style="height:64px">
+          <span class="flow-arrow" style="font-size:20px;padding:0">→</span>
+        </div>
+      </div>
+    </div>
+    <div class="animate-in" style="flex-shrink:0;position:relative;width:400px;height:400px">
+      <!-- LLM label box on top, fades out on step 2 to reveal tuners (result of training) -->
+      <div data-step-hide="2" style="position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;background:var(--bg)">
+        <img src="assets/screenshots/llm-image10.png" alt="LLM" style="width:100%;height:100%;object-fit:contain;border-radius:16px">
+      </div>
+      <!-- Tuners underneath -->
+      <img src="assets/screenshots/llm-image9.png" alt="Parameters cube" style="width:100%;height:100%;object-fit:contain;border-radius:16px">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Slide: Large Language Model (Fat Cat example) -->
+<section class="slide" data-title="Large Language Model">
+  <h1 class="animate-in" style="font-weight:800;font-size:clamp(28px,3.5vw,48px);text-align:center;margin-bottom:40px">Large Language Model</h1>
+  <div class="h-stack items-center justify-center" style="gap:24px;max-width:1000px;margin:0 auto">
+    <div data-step="1" class="card" style="padding:28px 32px;min-width:180px;text-align:center">
+      <p style="font-weight:800;font-size:clamp(20px,2.2vw,28px);line-height:1.3">The Fat Cat<br>Sat on<br>the <span class="text-orange">___</span></p>
+    </div>
+    <span data-step="1" class="flow-arrow" style="font-size:24px">→</span>
+    <div class="animate-in" style="flex-shrink:0">
+      <img src="assets/screenshots/llm-image9.png" alt="LLM parameters" style="max-width:300px;border-radius:16px">
+    </div>
+    <span data-step="2" class="flow-arrow" style="font-size:24px">→</span>
+    <div data-step="2" class="card" style="padding:28px 32px;text-align:center;border:2px solid var(--orange)">
+      <p style="font-weight:800;font-size:clamp(28px,3.5vw,44px)">Mat</p>
+      <p class="body-small" style="color:var(--text);margin-top:4px">97% probability</p>
+    </div>
+  </div>
+  <div data-step="3" style="text-align:center;margin-top:32px">
+    <svg width="500" height="40" viewBox="0 0 500 40" fill="none" style="margin:0 auto;display:block">
+      <path d="M430 6 C 445 6, 460 16, 460 26 C 460 36, 445 38, 420 38 L 80 38 C 55 38, 40 36, 40 26 C 40 16, 55 6, 70 6" stroke="var(--orange)" stroke-width="2" fill="none" stroke-dasharray="6 4"/>
+      <polygon points="65,1 75,6 65,11" fill="var(--orange)"/>
+    </svg>
+    <p class="body-medium text-orange" style="margin-top:8px;font-weight:600">Repeat — token by token</p>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Slide: PhD in EVERYTHING -->
+<section class="slide" data-title="PhD in Everything">
+  <h1 class="animate-in" style="font-weight:800;font-size:clamp(28px,3.5vw,44px);text-align:center;margin-bottom:32px">LLMs are like sophisticated<br>autocomplete systems</h1>
+  <div class="h-stack items-center justify-center" style="gap:48px;margin-top:24px">
+    <div data-step="1">
+      <p style="font-weight:800;font-size:clamp(24px,3vw,40px);line-height:1.2">With a PHD in<br><span class="text-orange" style="font-style:italic;font-size:1.2em">EVERYTHING</span></p>
+    </div>
+    <div data-step="1">
+      <img src="assets/screenshots/llm-image6.png" alt="Library" class="screenshot" style="max-width:500px;max-height:400px;object-fit:cover">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Slide: Limitations of LLMs -->
+<section class="slide" data-title="Limitations of LLMs">
+  <div class="center-content">
+    <h1 class="animate-in display-medium">Limitations of LLMs</h1>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Slide: Constrained to training data -->
+<section class="slide" data-title="Constrained to Data">
+  <div class="center-content">
+    <div class="animate-in h-stack items-center justify-center" style="gap:48px">
+      <img src="assets/screenshots/llm-image4.png" alt="Books" style="height:240px">
+      <p style="font-weight:500;font-size:clamp(32px,4vw,52px);max-width:500px">LLMs are <span class="text-orange" style="font-weight:700">constrained</span> to the data they were trained on</p>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Slide: They sometimes hallucinate -->
+<section class="slide" data-title="Hallucinations">
+  <div class="center-content">
+    <div class="animate-in h-stack items-center justify-center" style="gap:48px">
+      <img src="assets/screenshots/llm-image7.png" alt="Question mark" style="height:240px">
+      <p style="font-weight:500;font-size:clamp(32px,4vw,52px)">They sometimes <span class="text-orange" style="font-weight:600">hallucinate</span></p>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Slide: Frozen in time -->
+<section class="slide" data-title="Frozen in Time">
+  <div class="center-content">
+    <div class="animate-in h-stack items-center justify-center" style="gap:48px">
+      <img src="assets/screenshots/llm-image2.png" alt="Calendar" style="height:240px">
+      <p style="font-weight:500;font-size:clamp(32px,4vw,52px)">LLMs are <span class="text-orange" style="font-weight:600">frozen in time</span></p>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- ========== NOW: What are you using AI for? ========== -->
+
+<!-- What are you using AI chatbots for? -->
+<section class="slide" data-title="AI Chatbot Usage">
+  <div class="center-content">
+    <h1 class="animate-in" style="font-weight:800;font-size:clamp(32px,4vw,52px);letter-spacing:-0.02em;text-transform:uppercase;margin-bottom:60px">
+      What are you using AI<br>chatbots for?
+    </h1>
+    <div class="animate-in h-stack gap-32 items-center justify-center">
+      <img src="assets/screenshots/image1.png" alt="OpenAI" style="height:56px;opacity:0.7">
+      <img src="assets/screenshots/image3.png" alt="Gemini" style="height:56px;opacity:0.7">
+      <div style="width:56px;height:56px;border-radius:14px;background:var(--orange);display:flex;align-items:center;justify-content:center;color:white;font-size:28px;font-weight:800">C</div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Most users use AI chatbots for -->
+<section class="slide" data-title="Common AI Uses">
+  <h1 class="animate-in display-medium" style="margin-bottom:48px">Most users use AI chatbots for:</h1>
+  <div class="grid-3" style="max-width:900px">
+    <div data-step="1" class="v-stack gap-16 items-center" style="text-align:center">
+      <div class="icon-circle icon-orange" style="width:72px;height:72px;font-size:32px">✍️</div>
+      <h3 class="title-medium">Writing & Editing</h3>
+      <p class="body-small">Text (docs, emails, presentations, etc)</p>
+    </div>
+    <div data-step="2" class="v-stack gap-16 items-center" style="text-align:center">
+      <div class="icon-circle icon-blue" style="width:72px;height:72px;font-size:32px">📊</div>
+      <h3 class="title-medium">Data Analysis</h3>
+      <p class="body-small">Extracting insights from data sets</p>
+    </div>
+    <div data-step="3" class="v-stack gap-16 items-center" style="text-align:center">
+      <div class="icon-circle icon-green" style="width:72px;height:72px;font-size:32px">🔍</div>
+      <h3 class="title-medium">Information Search</h3>
+      <p class="body-small">Finding answers and resources quickly</p>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- What about these use cases? -->
+<section class="slide" data-title="Advanced Use Cases">
+  <h1 class="animate-in display-medium" style="margin-bottom:48px">What about these use cases?</h1>
+  <div class="grid-2x4" style="max-width:900px">
+    <div data-step="1" class="h-stack gap-16 items-center"><div class="icon-circle-sm icon-orange">💡</div><span class="body-medium" style="font-weight:500">Brainstorming ideas</span></div>
+    <div data-step="1" class="h-stack gap-16 items-center"><div class="icon-circle-sm icon-green">💬</div><span class="body-medium" style="font-weight:500">Getting feedback</span></div>
+    <div data-step="2" class="h-stack gap-16 items-center"><div class="icon-circle-sm icon-blue">🔍</div><span class="body-medium" style="font-weight:500">Finding inspiration</span></div>
+    <div data-step="2" class="h-stack gap-16 items-center"><div class="icon-circle-sm icon-orange">📅</div><span class="body-medium" style="font-weight:500">Preparing for meetings</span></div>
+    <div data-step="3" class="h-stack gap-16 items-center"><div class="icon-circle-sm icon-green">📋</div><span class="body-medium" style="font-weight:500">Prioritizing tasks</span></div>
+    <div data-step="3" class="h-stack gap-16 items-center"><div class="icon-circle-sm icon-blue">🎭</div><span class="body-medium" style="font-weight:500">Role playing conversations</span></div>
+    <div data-step="4" class="h-stack gap-16 items-center"><div class="icon-circle-sm icon-orange">⚖️</div><span class="body-medium" style="font-weight:500">Checking for biases</span></div>
+    <div data-step="4" class="h-stack gap-16 items-center"><div class="icon-circle-sm icon-green">😈</div><span class="body-medium" style="font-weight:500">Playing devil's advocate</span></div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Why simple tasks? -->
+<section class="slide slide-big-statement" data-title="Why Simple Tasks?">
+  <div class="center-content">
+    <h1 class="animate-in statement">Why do people<br>use AI mostly for<br>simple tasks?</h1>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- The bottleneck -->
+<section class="slide" data-title="The Bottleneck">
+  <div class="center-content">
+    <p class="animate-in body-large" style="margin-bottom:24px;font-weight:600">The bottleneck of LLMs is</p>
+    <h1 class="animate-in" style="font-weight:900;font-size:clamp(80px,14vw,200px);letter-spacing:-0.04em;color:var(--orange);line-height:0.9">CONTEXT</h1>
+    <p class="animate-in body-large" style="margin-top:24px;font-weight:600">not intelligence.</p>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- 50 First Dates -->
+<section class="slide" data-title="50 First Dates">
+  <div class="center-content">
+    <div class="animate-in">
+      <img src="assets/screenshots/image25.png" alt="50 First Dates poster" class="screenshot" style="max-height:75vh;width:auto">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Every conversation starts from zero -->
+<section class="slide" data-title="Starts from Zero">
+  <div class="split">
+    <div>
+      <h1 class="animate-in" style="font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.1;letter-spacing:-0.03em">
+        Every conversation<br>starts from <span class="text-orange">zero.</span>
+      </h1>
+      <p class="animate-in body-large text-gray" style="margin-top:24px;max-width:500px">
+        That's what it's like using AI without persistent context.
+      </p>
+    </div>
+    <div class="animate-in" style="display:flex;align-items:center;justify-content:center">
+      <img src="assets/screenshots/image5.png" alt="Gemini chat" class="screenshot" style="max-width:100%">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 15: Imagine an assistant -->
+<section class="slide" data-title="Imagine an Assistant">
+  <div class="center-content">
+    <h1 class="animate-in" style="font-weight:800;font-size:clamp(36px,5vw,68px);line-height:1.1;letter-spacing:-0.03em">
+      Imagine an assistant<br>that <span class="text-orange">knows you.</span>
+    </h1>
+    <p class="animate-in body-large text-gray" style="margin-top:24px">Your goals. Your style. Your projects.</p>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 16: If you could teach your AI chatbot... -->
+<section class="slide slide-big-statement" data-title="What Would You Include?">
+  <div class="center-content">
+    <h1 class="animate-in" style="font-weight:800;font-size:clamp(28px,4vw,52px);line-height:1.2;max-width:700px">
+      If you could teach<br>your AI chatbot<br>everything about you
+    </h1>
+    <h1 data-step="1" class="text-orange" style="font-weight:800;font-size:clamp(28px,4vw,52px);line-height:1.2;margin-top:40px;max-width:700px">
+      What would you include?
+    </h1>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 17: What you're describing is a colleague -->
+<section class="slide slide-big-statement" data-title="A Colleague">
+  <div class="center-content">
+    <h1 class="animate-in statement" style="font-size:clamp(36px,5vw,68px)">What you're describing<br>is a <span class="text-orange">colleague.</span></h1>
+    <p class="animate-in body-large text-gray" style="margin-top:24px;max-width:700px">Someone who works alongside you and knows what you know.</p>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- ========== WHAT WE COULD DO UNTIL NOW ========== -->
+
+<!-- Section title: What we had until now -->
+<section class="slide slide-big-statement" data-title="What We Had">
+  <div class="center-content">
+    <h1 class="animate-in statement" style="font-size:clamp(36px,5vw,68px)">
+      This is what we did<br><span class="text-orange">until now.</span>
+    </h1>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- ChatGPT Projects (first — more people know this) -->
+<section class="slide" data-title="ChatGPT Projects">
+  <div class="split">
+    <div>
+      <div class="section-marker animate-in">What We Had</div>
+      <h1 class="animate-in" style="font-size:clamp(28px,3.5vw,44px);font-weight:700;margin-bottom:16px">ChatGPT Projects</h1>
+      <p class="animate-in body-medium" style="margin-bottom:24px">Keep chats, files, and custom instructions in one place.</p>
+      <div class="animate-in v-stack gap-12">
+        <div class="h-stack gap-8 items-center"><span class="text-orange">+</span><p class="body-medium">Group related conversations together</p></div>
+        <div class="h-stack gap-8 items-center"><span class="text-orange">+</span><p class="body-medium">Attach files and set project-level instructions</p></div>
+        <div class="h-stack gap-8 items-center"><span class="text-orange">+</span><p class="body-medium">Use for ongoing work or just to keep things tidy</p></div>
+      </div>
+    </div>
+    <div class="animate-in" style="display:flex;align-items:center;justify-content:center">
+      <img src="assets/screenshots/chatgpt-project.png" alt="ChatGPT Project" class="screenshot" style="max-width:100%">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Gemini Gems -->
+<section class="slide" data-title="Gemini Gems">
+  <div class="split">
+    <div>
+      <div class="section-marker animate-in">What We Had</div>
+      <h1 class="animate-in" style="font-size:clamp(28px,3.5vw,44px);font-weight:700;margin-bottom:16px">Gemini Gems</h1>
+      <p class="animate-in body-medium" style="margin-bottom:24px">Custom AI personas with pre-loaded instructions and knowledge files.</p>
+      <div class="animate-in v-stack gap-12">
+        <div class="h-stack gap-8 items-center"><span class="text-orange">+</span><p class="body-medium">Give the model a name, description, and instructions</p></div>
+        <div class="h-stack gap-8 items-center"><span class="text-orange">+</span><p class="body-medium">Upload knowledge files for reference</p></div>
+        <div class="h-stack gap-8 items-center"><span class="text-orange">+</span><p class="body-medium">Reuse across conversations</p></div>
+      </div>
+    </div>
+    <div class="animate-in" style="display:flex;align-items:center;justify-content:center">
+      <img src="assets/screenshots/gemini-gem.png" alt="Gemini Gem" class="screenshot" style="max-width:100%">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Why Not Enough -->
+<section class="slide" data-title="Why Not Enough">
+  <div class="center-content">
+    <h1 class="animate-in display-medium" style="margin-bottom:48px">But they have two problems</h1>
+    <div class="animate-in" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:900px">
+      <div class="card" style="padding:40px;text-align:center">
+        <div style="font-size:56px;margin-bottom:16px">🔒</div>
+        <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">Context stays <span class="text-orange">static</span></h3>
+        <p class="body-medium text-gray">You never update your files after a session. The context becomes outdated.</p>
+      </div>
+      <div class="card" style="padding:40px;text-align:center">
+        <div style="font-size:56px;margin-bottom:16px">📦</div>
+        <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">Context is <span class="text-orange">monolithic</span></h3>
+        <p class="body-medium text-gray">All or nothing. No way to pull just what you need for a specific task.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- ========== THE SHIFT ========== -->
+
+<!-- The Method — explained clearly -->
+<section class="slide" data-title="The Method">
+  <div class="center-content">
+    <h1 class="animate-in display-medium" style="margin-bottom:40px">A different approach</h1>
+    <div class="animate-in" style="display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;max-width:900px">
+      <div class="card" style="padding:32px;text-align:center;opacity:0.5">
+        <div style="font-size:40px;margin-bottom:12px">💬</div>
+        <h4 style="font-weight:700;font-size:18px;margin-bottom:8px">Chat-based</h4>
+        <p class="body-small" style="color:var(--text)">One-time conversations<br>Context resets every time<br>You manage everything manually</p>
+      </div>
+      <div class="flow-arrow" style="font-size:32px">→</div>
+      <div class="card" style="padding:32px;text-align:center;border:2px solid var(--orange)">
+        <div style="font-size:40px;margin-bottom:12px">📂</div>
+        <h4 style="font-weight:700;font-size:18px;margin-bottom:8px">System-based</h4>
+        <p class="body-small" style="color:var(--text)">Local files the AI reads and writes<br>Context that grows over time<br>Automations that run on their own</p>
+      </div>
+    </div>
+    <p data-step="1" class="body-large" style="margin-top:32px;font-weight:600;max-width:700px">
+      It's not about <span class="text-orange">the tool</span> — it's about <span class="text-orange">the method.</span>
+    </p>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Three Shifts -->
+<section class="slide" data-title="Three Shifts">
+  <h1 class="animate-in display-medium" style="margin-bottom:48px">What changes with this approach</h1>
+  <div class="h-stack items-start justify-center" style="gap:24px;max-width:1000px;margin:0 auto">
+    <div data-step="1" class="card" style="flex:1;text-align:center;padding:40px 24px">
+      <div style="font-size:48px;margin-bottom:16px">📖</div>
+      <span style="font-weight:800;font-size:48px;color:var(--light-gray)">1</span>
+      <h3 style="font-weight:700;font-size:20px;margin:12px 0 8px">Systems that learn</h3>
+      <p class="body-small" style="color:var(--text)">Read & Write Capability</p>
+    </div>
+    <div data-step="2" style="align-self:center" class="flow-arrow">→</div>
+    <div data-step="2" class="card" style="flex:1;text-align:center;padding:40px 24px">
+      <div style="font-size:48px;margin-bottom:16px">📂</div>
+      <span style="font-weight:800;font-size:48px;color:var(--light-gray)">2</span>
+      <h3 style="font-weight:700;font-size:20px;margin:12px 0 8px">Total context control</h3>
+      <p class="body-small" style="color:var(--text)">Structured Memory</p>
+    </div>
+    <div data-step="3" style="align-self:center" class="flow-arrow">→</div>
+    <div data-step="3" class="card" style="flex:1;text-align:center;padding:40px 24px">
+      <div style="font-size:48px;margin-bottom:16px">⚡</div>
+      <span style="font-weight:800;font-size:48px;color:var(--light-gray)">3</span>
+      <h3 style="font-weight:700;font-size:20px;margin:12px 0 8px">Action, not just answers</h3>
+      <p class="body-small" style="color:var(--text)">Real-world Execution</p>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Claude Cowork + Claude Code -->
+<section class="slide" data-title="Claude Cowork">
+  <div class="center-content">
+    <div class="animate-in" style="margin-bottom:32px">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="var(--orange)" fill-opacity="0.1"/><path d="M20 24h24M20 32h16M20 40h20" stroke="var(--orange)" stroke-width="3" stroke-linecap="round"/></svg>
+    </div>
+    <h1 class="animate-in display-medium" style="margin-bottom:16px">Claude Cowork & Claude Code</h1>
+    <p class="animate-in body-large text-gray" style="max-width:600px;margin-bottom:32px">The clearest example of this method right now</p>
+    <div data-step="1" class="body-large" style="max-width:600px">
+      <p>Even if a better tool launches tomorrow — this approach stays relevant.</p>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Not locked to one vendor -->
+<section class="slide" data-title="Vendor Agnostic">
+  <div class="center-content">
+    <h1 class="animate-in" style="font-weight:800;font-size:clamp(28px,3.5vw,48px);margin-bottom:16px;max-width:800px">
+      Not locked to one vendor.
+    </h1>
+    <p class="animate-in body-large text-gray" style="margin-bottom:40px;max-width:600px">The same folder and markdown files work with:</p>
+    <div class="animate-in h-stack gap-24 justify-center items-center">
+      <div class="card" style="padding:24px 32px;text-align:center">
+        <div style="font-size:32px;margin-bottom:8px">🤖</div>
+        <h4 style="font-weight:600;font-size:16px">Claude Cowork</h4>
+      </div>
+      <div class="card" style="padding:24px 32px;text-align:center">
+        <div style="font-size:32px;margin-bottom:8px">⌨️</div>
+        <h4 style="font-weight:600;font-size:16px">Claude Code</h4>
+      </div>
+      <div class="card" style="padding:24px 32px;text-align:center">
+        <div style="font-size:32px;margin-bottom:8px">📦</div>
+        <h4 style="font-weight:600;font-size:16px">Codex</h4>
+      </div>
+      <div class="card" style="padding:24px 32px;text-align:center">
+        <div style="font-size:32px;margin-bottom:8px">🖥️</div>
+        <h4 style="font-weight:600;font-size:16px">Cursor</h4>
+      </div>
+    </div>
+    <div class="animate-in card" style="margin-top:32px;padding:20px 40px;background:var(--light-gray);border:none">
+      <p class="body-medium" style="text-align:center;font-weight:500">📂 One folder → Any tool → Same results</p>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- PART 2 DIVIDER -->
+<section class="slide slide-section-divider" data-title="Part 2: How It Works">
+  <div class="center-content">
+    <div class="animate-in divider-line"></div>
+    <p class="animate-in part-label">Part 2</p>
+    <h1 class="animate-in" style="font-weight:300;font-size:clamp(48px,6vw,88px);line-height:1.05">
+      How Cowork<br><span class="text-orange" style="font-style:italic;font-weight:700">Works</span>
+    </h1>
+    <div class="animate-in pill-row" style="margin-top:40px">
+      <span class="pill">🔒 Markdown Brain</span>
+      <span class="pill">🔌 Connectors</span>
+      <span class="pill">🧩 Plugins</span>
+      <span class="pill">🎯 Skills</span>
+      <span class="pill">⏰ Scheduled Tasks</span>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- What we'll cover (roadmap — right after divider) -->
+<section class="slide" data-title="What We'll Cover">
+  <h1 class="animate-in display-medium" style="margin-bottom:48px">What we'll cover</h1>
+  <div class="v-stack gap-20" style="max-width:600px">
+    <div data-step="1" class="h-stack gap-16 items-center">
+      <div class="num-badge">1</div>
+      <p class="body-large" style="font-weight:600">The workspace — Markdown files & Obsidian</p>
+    </div>
+    <div data-step="2" class="h-stack gap-16 items-center">
+      <div class="num-badge" style="background:var(--blue)">2</div>
+      <p class="body-large" style="font-weight:600">Connectors — Gmail, Slack, Calendar, Browser</p>
+    </div>
+    <div data-step="3" class="h-stack gap-16 items-center">
+      <div class="num-badge" style="background:var(--green)">3</div>
+      <p class="body-large" style="font-weight:600">Skills & Plugins — reusable workflows</p>
+    </div>
+    <div data-step="4" class="h-stack gap-16 items-center">
+      <div class="num-badge" style="background:var(--mid-gray)">4</div>
+      <p class="body-large" style="font-weight:600">Scheduled Tasks — automations on autopilot</p>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Claude Ecosystem -->
+<section class="slide" data-title="Claude Ecosystem">
+  <div class="center-content">
+    <h1 class="animate-in display-medium" style="margin-bottom:48px">The Claude Ecosystem</h1>
+    <div class="animate-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px">
+      <div class="card" style="text-align:center;padding:32px 24px">
+        <div style="width:64px;height:64px;border-radius:16px;background:rgba(217,119,87,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px">💬</div>
+        <h4 style="font-weight:700;font-size:18px;margin-bottom:4px">Claude Chat</h4>
+        <p class="body-small">Web and app</p>
+      </div>
+      <div class="card" style="text-align:center;padding:32px 24px;border:2px solid var(--orange)">
+        <div style="width:64px;height:64px;border-radius:16px;background:rgba(217,119,87,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px">👥</div>
+        <h4 style="font-weight:700;font-size:18px;margin-bottom:4px">Claude Cowork</h4>
+        <p class="body-small">Desktop app only</p>
+      </div>
+      <div class="card" style="text-align:center;padding:32px 24px">
+        <div style="width:64px;height:64px;border-radius:16px;background:rgba(217,119,87,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px">⌨️</div>
+        <h4 style="font-weight:700;font-size:18px;margin-bottom:4px">Claude Code</h4>
+        <p class="body-small">Terminal or Desktop app</p>
+      </div>
+    </div>
+    <div class="animate-in" style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:580px;margin-top:24px">
+      <div class="card" style="text-align:center;padding:28px 24px">
+        <div style="width:56px;height:56px;border-radius:14px;background:rgba(106,155,204,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:24px">📊</div>
+        <h4 style="font-weight:700;font-size:16px;margin-bottom:4px">Claude for Excel</h4>
+        <p class="body-small">Inside Excel</p>
+      </div>
+      <div class="card" style="text-align:center;padding:28px 24px">
+        <div style="width:56px;height:56px;border-radius:14px;background:rgba(106,155,204,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:24px">🌐</div>
+        <h4 style="font-weight:700;font-size:16px;margin-bottom:4px">Claude for Chrome</h4>
+        <p class="body-small">Chrome extension</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Local Folder -->
+<section class="slide" data-title="Local Folder">
+  <div class="split">
+    <div>
+      <div class="section-marker animate-in">The Workspace</div>
+      <h1 class="animate-in" style="font-size:clamp(28px,3.5vw,44px);font-weight:700;margin-bottom:24px">Cowork Works in a Local Folder</h1>
+      <div class="animate-in v-stack gap-20">
+        <div class="h-stack gap-12 items-center">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--orange)"></div>
+          <p class="body-medium"><strong>Context is saved locally</strong> as MD files</p>
+        </div>
+        <div class="h-stack gap-12 items-center">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--orange)"></div>
+          <p class="body-medium"><strong>Full control</strong> of the context</p>
+        </div>
+        <div class="h-stack gap-12 items-center">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--orange)"></div>
+          <p class="body-medium"><strong>Claude can update and create</strong> files</p>
+        </div>
+        <div class="h-stack gap-12 items-center">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--orange)"></div>
+          <p class="body-medium"><strong>Files are accessible</strong> across sessions</p>
+        </div>
+      </div>
+    </div>
+    <div class="animate-in v-stack gap-16">
+      <img src="assets/screenshots/image70.png" alt="File tree" class="screenshot" style="max-width:100%">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Markdown Files (SECOND — what are these files?) -->
+<section class="slide" data-title="Markdown Files">
+  <div class="section-marker animate-in">The Workspace</div>
+  <h1 class="animate-in display-medium" style="margin-bottom:12px">Markdown files (.md)</h1>
+  <p class="animate-in body-large" style="margin-bottom:32px">Plain text files with simple formatting syntax. LLMs understand them natively.</p>
+  <div class="animate-in card" style="max-width:600px;padding:24px 32px;background:rgba(120,140,93,0.06);border:1px solid rgba(120,140,93,0.15);font-family:monospace;font-size:16px;margin-bottom:32px">
+    <code><span style="color:var(--green)"># </span>for a heading &nbsp;&nbsp; <span style="color:var(--green)">**bold**</span> for bold text &nbsp;&nbsp; <span style="color:var(--green)">*italics*</span> for italics</code>
+  </div>
+  <div class="animate-in h-stack gap-24 items-center" style="margin-top:24px">
+    <div class="card-sm" style="text-align:center;padding:16px 24px"><div style="font-size:28px;margin-bottom:4px">📄</div><p class="body-small">about-me.md</p></div>
+    <div class="card-sm" style="text-align:center;padding:16px 24px"><div style="font-size:28px;margin-bottom:4px">📄</div><p class="body-small">writing-style.md</p></div>
+    <div class="flow-arrow">→</div>
+    <div style="font-size:48px">🧠</div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- AI Operating System (THIRD — how it connects) -->
+<section class="slide" data-title="AI Operating System">
+  <div class="split">
+    <div>
+      <div class="section-marker animate-in">The Workspace</div>
+      <h1 class="animate-in" style="font-size:clamp(24px,3vw,40px);font-weight:700;margin-bottom:24px">Markdown Files = Your AI Operating System</h1>
+      <div class="animate-in card" style="padding:24px;border-left:4px solid var(--orange);border-radius:0 var(--card-radius) var(--card-radius) 0;margin-bottom:24px">
+        <p class="body-medium">Most AI tools treat files as static reference. <strong>Cowork treats files as living memory.</strong></p>
+      </div>
+      <div class="animate-in v-stack gap-12">
+        <div class="h-stack gap-12 items-center"><span class="text-orange" style="font-weight:600;min-width:130px;font-size:14px">Personal Context</span><span class="body-small">about-me, writing-style</span></div>
+        <div class="h-stack gap-12 items-center"><span class="text-blue" style="font-weight:600;min-width:130px;font-size:14px">Project Context</span><span class="body-small">Customers, Workshops</span></div>
+        <div class="h-stack gap-12 items-center"><span class="text-orange" style="font-weight:600;min-width:130px;font-size:14px">Workflows</span><span class="body-small">Templates, Skills</span></div>
+        <div class="h-stack gap-12 items-center"><span class="text-gray" style="font-weight:600;min-width:130px;font-size:14px">Instructions</span><span class="body-small">CLAUDE.md</span></div>
+      </div>
+    </div>
+    <div class="animate-in">
+      <img src="assets/screenshots/image96.png" alt="About-me file in Obsidian" class="screenshot" style="max-width:100%">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- CLAUDE.md (FOURTH — the roadmap file) -->
+<!-- SLIDE 27: CLAUDE.md -->
+<section class="slide" data-title="CLAUDE.md">
+  <div class="split">
+    <div>
+      <div class="section-marker animate-in">The Brain</div>
+      <h1 class="animate-in" style="font-size:clamp(28px,3.5vw,44px);font-weight:700;margin-bottom:8px">CLAUDE.md</h1>
+      <p class="animate-in body-large text-gray" style="margin-bottom:32px">The file Claude always reads at the start of every session</p>
+      <div class="animate-in v-stack gap-20">
+        <div class="h-stack gap-16">
+          <div class="num-badge">1</div>
+          <div>
+            <h4 style="font-weight:600;font-size:16px">Tells Claude WHERE to look</h4>
+            <p class="body-small">Which files to read for each task type</p>
+          </div>
+      </div>
+      <div class="h-stack gap-16">
+        <div class="num-badge" style="background:var(--blue)">2</div>
+        <div>
+          <h4 style="font-weight:600;font-size:16px">Tells Claude HOW to behave</h4>
+          <p class="body-small">Operating rules, preferences, constraints</p>
+        </div>
+      </div>
+      <div class="h-stack gap-16">
+        <div class="num-badge" style="background:var(--green)">3</div>
+        <div>
+          <h4 style="font-weight:600;font-size:16px">Loads minimum context</h4>
+          <p class="body-small">Keeps sessions fast — reads more only when needed</p>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="animate-in" style="display:flex;align-items:center;justify-content:center">
+      <img src="assets/screenshots/claude-md-ui.png" alt="CLAUDE.md UI" class="screenshot" style="max-width:100%">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Obsidian (TIP — how to view the files) -->
+<section class="slide" data-title="Viewing with Obsidian">
+  <div class="center-content">
+    <div class="animate-in" style="display:inline-flex;align-items:center;gap:16px;padding:12px 28px;background:var(--light-gray);border-radius:12px;margin-bottom:32px">
+      <span style="font-size:20px">💡</span>
+      <span style="font-weight:600;font-size:15px">Tip</span>
+    </div>
+    <h1 class="animate-in" style="font-weight:700;font-size:clamp(28px,3.5vw,44px);margin-bottom:16px">Use Obsidian to view your files</h1>
+    <p class="animate-in body-large text-gray" style="max-width:600px;margin-bottom:32px">A free, local-first markdown editor. Open your folder as a Vault and browse everything visually.</p>
+    <p class="animate-in body-medium text-gray">*You can also use VS Code or any text editor</p>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 28: Connectors -->
+<section class="slide" data-title="Connectors">
+  <div class="split">
+    <div>
+      <div class="section-marker animate-in">Connectivity</div>
+      <h1 class="animate-in" style="font-size:clamp(28px,3.5vw,44px);font-weight:700;margin-bottom:8px">Connectors</h1>
+      <p class="animate-in body-medium text-gray" style="margin-bottom:32px">Bring Claude into your existing tools via MCP — 38+ built-in connectors</p>
+      <div class="animate-in" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:400px">
+        <div class="card-sm" style="text-align:center;padding:16px 8px"><div style="font-size:24px;margin-bottom:4px">📧</div><p style="font-size:11px">Gmail</p></div>
+        <div class="card-sm" style="text-align:center;padding:16px 8px"><div style="font-size:24px;margin-bottom:4px">📅</div><p style="font-size:11px">Calendar</p></div>
+        <div class="card-sm" style="text-align:center;padding:16px 8px"><div style="font-size:24px;margin-bottom:4px">💬</div><p style="font-size:11px">Slack</p></div>
+        <div class="card-sm" style="text-align:center;padding:16px 8px"><div style="font-size:24px;margin-bottom:4px">📋</div><p style="font-size:11px">Jira</p></div>
+      </div>
+    </div>
+    <div class="animate-in" style="display:flex;align-items:flex-start;justify-content:center;overflow:hidden;max-height:55vh;border-radius:12px;box-shadow:0 4px 30px rgba(0,0,0,0.1)">
+      <img src="assets/screenshots/image87.png" alt="Connectors panel" style="max-width:100%">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 29: Claude in the Browser -->
+<section class="slide" data-title="Browser Research">
+  <div class="split">
+    <div>
+      <div class="section-marker animate-in">Research & Analysis</div>
+      <h1 class="animate-in" style="font-size:clamp(28px,3.5vw,44px);font-weight:700;margin-bottom:24px">Claude in the Browser</h1>
+      <div class="animate-in v-stack gap-16">
+        <div class="h-stack gap-12 items-center"><div class="icon-circle-sm icon-blue">🔍</div><p class="body-medium"><strong>Deep Research</strong> — visits pages, follows citations</p></div>
+        <div class="h-stack gap-12 items-center"><div class="icon-circle-sm icon-green">📊</div><p class="body-medium"><strong>Data Extraction</strong> — websites to structured tables</p></div>
+        <div class="h-stack gap-12 items-center"><div class="icon-circle-sm icon-orange">📈</div><p class="body-medium"><strong>Live Analysis</strong> — competitor pages in real time</p></div>
+        <div class="h-stack gap-12 items-center"><div class="icon-circle-sm icon-gray">⚡</div><p class="body-medium"><strong>Logged-in Access</strong> — browse as you</p></div>
+      </div>
+    </div>
+    <div class="animate-in" style="display:flex;align-items:center;justify-content:center">
+      <img src="assets/screenshots/claude-browser-ui.png" alt="Claude UI" class="screenshot" style="max-width:100%">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 30: Skills divider -->
+<section class="slide" data-title="Skills">
+  <div class="center-content">
+    <h1 class="animate-in" style="font-weight:800;font-size:clamp(64px,10vw,140px);letter-spacing:-0.03em">Skills</h1>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 31: What is a skill? -->
+<section class="slide slide-big-statement" data-title="What is a Skill?">
+  <div class="center-content">
+    <h1 class="animate-in statement" style="font-size:clamp(36px,5vw,68px)">
+      A skill is just<br>a <span class="text-orange">folder.</span>
+    </h1>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 32: Progressive Disclosure -->
+<section class="slide" data-title="Progressive Disclosure">
+  <div class="section-marker animate-in">Skills</div>
+  <h1 class="animate-in" style="font-size:clamp(28px,3.5vw,40px);font-weight:700;margin-bottom:8px">Core design principle of a Skill</h1>
+  <p class="animate-in title-medium" style="margin-bottom:40px;font-weight:500;color:var(--orange)">Progressive Disclosure</p>
+  <div class="animate-in v-stack gap-24" style="max-width:700px">
+    <div class="card" style="padding:24px;display:flex;gap:16px;align-items:flex-start">
+      <div class="num-badge">1</div>
+      <div>
+        <h4 style="font-weight:700;font-size:16px;margin-bottom:4px">First level — YAML frontmatter</h4>
+        <p class="body-medium text-gray">Always loaded in the system prompt. Just enough to know when to activate.</p>
+      </div>
+    </div>
+    <div style="text-align:center;color:var(--mid-gray);font-size:20px">↓</div>
+    <div class="card" style="padding:24px;display:flex;gap:16px;align-items:flex-start">
+      <div class="num-badge" style="background:var(--blue)">2</div>
+      <div>
+        <h4 style="font-weight:700;font-size:16px;margin-bottom:4px">Second level — SKILL.md body</h4>
+        <p class="body-medium text-gray">Loaded when the skill is relevant. Contains the full instructions.</p>
+      </div>
+    </div>
+    <div style="text-align:center;color:var(--mid-gray);font-size:20px">↓</div>
+    <div class="card" style="padding:24px;display:flex;gap:16px;align-items:flex-start">
+      <div class="num-badge" style="background:var(--green)">3</div>
+      <div>
+        <h4 style="font-weight:700;font-size:16px;margin-bottom:4px">Third level — Linked files</h4>
+        <p class="body-medium text-gray">Additional files discovered only as needed. Minimizes token usage.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 33: Skills complete picture -->
+<section class="slide" data-title="Skills Architecture">
+  <div class="center-content">
+    <div class="animate-in" style="max-width:1000px">
+      <img src="assets/screenshots/image122.png" alt="Skills architecture diagram" class="screenshot" style="max-width:100%;max-height:75vh">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 34: Skills UI -->
+<section class="slide" data-title="Skills Panel">
+  <div class="split">
+    <div>
+      <div class="section-marker animate-in">Skills</div>
+      <h1 class="animate-in" style="font-size:clamp(28px,3.5vw,44px);font-weight:700;margin-bottom:16px">Your Skills Library</h1>
+      <p class="animate-in body-medium text-gray" style="margin-bottom:24px">Build, install, and manage skills directly from the Cowork interface.</p>
+      <div class="animate-in v-stack gap-12">
+        <div class="h-stack gap-8 items-center"><span class="text-orange">→</span><p class="body-medium">Personal skills you create</p></div>
+        <div class="h-stack gap-8 items-center"><span class="text-orange">→</span><p class="body-medium">Community skills from marketplace</p></div>
+        <div class="h-stack gap-8 items-center"><span class="text-orange">→</span><p class="body-medium">Anthropic-built official skills</p></div>
+      </div>
+    </div>
+    <div class="animate-in">
+      <img src="assets/screenshots/image103.png" alt="Skills panel" class="screenshot" style="max-width:100%">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 35: Skills Evolution -->
+<section class="slide" data-title="Skills Evolution">
+  <div class="center-content">
+    <div class="animate-in" style="max-width:1000px">
+      <img src="assets/screenshots/image114.png" alt="Skills evolution" class="screenshot" style="max-width:100%;max-height:75vh">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 36: Plugins -->
+<section class="slide" data-title="Plugins">
+  <div class="split">
+    <div>
+      <h1 class="animate-in display-medium" style="margin-bottom:12px">Plugins</h1>
+      <p class="animate-in body-large text-gray" style="margin-bottom:24px">Role-specific packages of pre-defined skills</p>
+      <div class="animate-in v-stack gap-12" style="max-width:300px">
+        <div class="card-sm" style="padding:14px 20px"><div class="h-stack gap-12 items-center"><span>📋</span><strong style="font-size:14px">Operations</strong></div></div>
+        <div class="card-sm" style="padding:14px 20px"><div class="h-stack gap-12 items-center"><span>🎨</span><strong style="font-size:14px">Design</strong></div></div>
+        <div class="card-sm" style="padding:14px 20px;border:2px solid var(--orange)"><div class="h-stack gap-12 items-center"><span>📊</span><strong style="font-size:14px">Product Management</strong></div></div>
+        <div class="card-sm" style="padding:14px 20px"><div class="h-stack gap-12 items-center"><span>💰</span><strong style="font-size:14px">Sales</strong></div></div>
+        <div class="card-sm" style="padding:14px 20px"><div class="h-stack gap-12 items-center"><span>📣</span><strong style="font-size:14px">Marketing</strong></div></div>
+      </div>
+    </div>
+    <div class="animate-in">
+      <img src="assets/screenshots/image149.png" alt="Plugins browser" class="screenshot" style="max-width:100%">
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 37: Security Warning -->
+<section class="slide" data-title="Security Notice">
+  <div class="center-content">
+    <div class="animate-in" style="margin-bottom:32px">
+      <div style="display:inline-flex;align-items:center;gap:12px;padding:12px 24px;background:#fff3cd;border:2px solid #f0ad4e;border-radius:12px">
+        <span style="font-size:28px">⚠️</span>
+        <span style="font-weight:700;font-size:18px;color:#856404">Security Notice</span>
+      </div>
+    </div>
+    <h1 class="animate-in" style="font-weight:800;font-size:clamp(28px,3.5vw,44px);max-width:800px;margin-bottom:32px">
+      Be cautious with<br>third-party Skills & Plugins
+    </h1>
+    <div class="animate-in v-stack gap-20" style="max-width:600px;text-align:left">
+      <div class="h-stack gap-12 items-center"><span style="font-size:20px">🔍</span><p class="body-medium">Review what a Skill does before installing</p></div>
+      <div class="h-stack gap-12 items-center"><span style="font-size:20px">🏢</span><p class="body-medium">Prefer Skills from verified publishers</p></div>
+      <div class="h-stack gap-12 items-center"><span style="font-size:20px">🔒</span><p class="body-medium">Skills can access your files and connectors</p></div>
+      <div class="h-stack gap-12 items-center"><span style="font-size:20px">💼</span><p class="body-medium">Enterprise: set internal approval policies</p></div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 38: Scheduled Tasks -->
+<section class="slide" data-title="Scheduled Tasks">
+  <div class="section-marker animate-in">Automation</div>
+  <h1 class="animate-in" style="font-size:clamp(28px,3.5vw,44px);font-weight:700;margin-bottom:8px">Scheduled Tasks: Put Cowork on Autopilot</h1>
+  <p class="animate-in body-medium text-gray" style="margin-bottom:40px">Recurring workflows that run automatically</p>
+  <div class="animate-in grid-3" style="max-width:800px">
+    <div class="card" style="padding:24px;text-align:center">
+      <div style="font-size:36px;margin-bottom:12px">🌅</div>
+      <h4 style="font-weight:600;font-size:15px;margin-bottom:8px">Morning Briefing</h4>
+      <p class="body-small">Every day at 7 AM</p>
+    </div>
+    <div class="card" style="padding:24px;text-align:center">
+      <div style="font-size:36px;margin-bottom:12px">🔍</div>
+      <h4 style="font-weight:600;font-size:15px;margin-bottom:8px">Competitor Monitor</h4>
+      <p class="body-small">Every Thursday at 10 AM</p>
+    </div>
+    <div class="card" style="padding:24px;text-align:center">
+      <div style="font-size:36px;margin-bottom:12px">📊</div>
+      <h4 style="font-weight:600;font-size:15px;margin-bottom:8px">Weekly Report</h4>
+      <p class="body-small">Every Friday at 4 PM</p>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- PART 3 DIVIDER -->
+<section class="slide slide-section-divider" data-title="Part 3: Use Cases">
+  <div class="center-content">
+    <div class="animate-in divider-line"></div>
+    <p class="animate-in part-label">Part 3</p>
+    <h1 class="animate-in" style="font-weight:300;font-size:clamp(48px,6vw,88px);line-height:1.05">
+      Practical<br><span class="text-orange" style="font-style:italic;font-weight:700">Use Cases</span>
+    </h1>
+    <div class="animate-in pill-row" style="margin-top:40px">
+      <span class="pill">🌅 Morning Briefing</span>
+      <span class="pill">🔍 Competitor Research</span>
+      <span class="pill">📅 Meeting Prep</span>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 40: Morning Briefing -->
+<section class="slide" data-title="Morning Briefing">
+  <div class="section-marker animate-in">Use Case 1</div>
+  <h1 class="animate-in" style="font-size:clamp(28px,3.5vw,44px);font-weight:700;margin-bottom:8px">Morning Briefing</h1>
+  <p class="animate-in body-medium text-gray" style="margin-bottom:40px">Stop checking 5 different inboxes. Start your day with clarity.</p>
+  <div class="animate-in split">
+    <div class="v-stack gap-20 items-center">
+      <p class="body-small" style="text-transform:uppercase;letter-spacing:0.05em">Your Inputs</p>
+      <div class="h-stack gap-16">
+        <div class="icon-circle icon-orange" style="font-size:24px">📧</div>
+        <div class="icon-circle icon-blue" style="font-size:24px">📅</div>
+      </div>
+      <div class="h-stack gap-16">
+        <div class="icon-circle icon-green" style="font-size:24px">💬</div>
+        <div class="icon-circle icon-gray" style="font-size:24px">📋</div>
+      </div>
+      <div style="margin-top:8px"><div class="icon-circle" style="width:48px;height:48px;background:rgba(217,119,87,0.1);color:var(--orange);font-size:20px">🔄</div></div>
+      <p class="body-small">Consolidates</p>
+    </div>
+    <div>
+      <p class="body-small" style="text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px">The Deliverable</p>
+      <div class="card" style="padding:28px">
+        <div class="h-stack" style="justify-content:space-between;margin-bottom:16px">
+          <h3 style="font-weight:700;font-size:20px">Daily Briefing</h3>
+          <span style="font-size:20px">☕</span>
+        </div>
+        <p style="font-family:monospace;font-size:12px;color:var(--mid-gray);margin-bottom:20px">Today, 7:00 AM</p>
+        <div class="v-stack gap-12">
+          <div class="h-stack gap-8 items-center"><span class="text-orange">🔴</span><p class="body-small" style="color:var(--text)">3 urgent emails need response</p></div>
+          <div class="h-stack gap-8 items-center"><span class="text-blue">📅</span><p class="body-small" style="color:var(--text)">Q3 planning at 2 PM — prep notes ready</p></div>
+          <div class="h-stack gap-8 items-center"><span class="text-green">💬</span><p class="body-small" style="color:var(--text)">5 Slack threads flagged for you</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 41: Competitor Research -->
+<section class="slide" data-title="Competitor Research">
+  <div class="section-marker animate-in">Use Case 2</div>
+  <h1 class="animate-in" style="font-size:clamp(28px,3.5vw,44px);font-weight:700;margin-bottom:8px">Competitor Research</h1>
+  <p class="animate-in body-medium text-gray" style="margin-bottom:40px">Automated intelligence gathering across the web.</p>
+  <div class="animate-in split">
+    <div class="v-stack gap-20 items-center">
+      <p class="body-small" style="text-transform:uppercase;letter-spacing:0.05em">Data Sources</p>
+      <div class="h-stack gap-16">
+        <div class="icon-circle icon-blue" style="font-size:24px">🌐</div>
+        <div class="icon-circle icon-green" style="font-size:24px">📰</div>
+      </div>
+      <div class="h-stack gap-16">
+        <div class="icon-circle icon-orange" style="font-size:24px">💼</div>
+        <div class="icon-circle icon-gray" style="font-size:24px">📊</div>
+      </div>
+      <div style="margin-top:8px"><div class="icon-circle" style="width:48px;height:48px;background:rgba(106,155,204,0.1);color:var(--blue);font-size:20px">🔄</div></div>
+      <p class="body-small">Synthesizes</p>
+    </div>
+    <div>
+      <p class="body-small" style="text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px">The Deliverable</p>
+      <div class="card" style="padding:28px">
+        <h3 style="font-weight:700;font-size:20px;margin-bottom:16px">Competitor Analysis</h3>
+        <div class="v-stack gap-12">
+          <div class="h-stack gap-8 items-center"><span class="text-orange">📌</span><p class="body-small" style="color:var(--text)">Competitor X launched new pricing tier</p></div>
+          <div class="h-stack gap-8 items-center"><span class="text-blue">📰</span><p class="body-small" style="color:var(--text)">3 new press mentions this week</p></div>
+          <div class="h-stack gap-8 items-center"><span class="text-green">💡</span><p class="body-small" style="color:var(--text)">Strategic opportunities identified</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 42: Meeting Prep -->
+<section class="slide" data-title="Meeting Prep">
+  <div class="section-marker animate-in">Use Case 3</div>
+  <h1 class="animate-in" style="font-size:clamp(28px,3.5vw,44px);font-weight:700;margin-bottom:8px">Meeting Prep</h1>
+  <p class="animate-in body-medium text-gray" style="margin-bottom:40px">Walk into every meeting fully briefed.</p>
+  <div class="animate-in split">
+    <div class="v-stack gap-20 items-center">
+      <p class="body-small" style="text-transform:uppercase;letter-spacing:0.05em">Data Sources</p>
+      <div class="h-stack gap-16">
+        <div class="icon-circle icon-orange" style="font-size:24px">📧</div>
+        <div class="icon-circle icon-blue" style="font-size:24px">📅</div>
+      </div>
+      <div class="h-stack gap-16">
+        <div class="icon-circle icon-green" style="font-size:24px">📄</div>
+        <div class="icon-circle icon-gray" style="font-size:24px">💼</div>
+      </div>
+      <div style="margin-top:8px"><div class="icon-circle" style="width:48px;height:48px;background:rgba(120,140,93,0.1);color:var(--green);font-size:20px">🔄</div></div>
+      <p class="body-small">Synthesizes</p>
+    </div>
+    <div>
+      <p class="body-small" style="text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px">The Deliverable</p>
+      <div class="card" style="padding:28px">
+        <h3 style="font-weight:700;font-size:20px;margin-bottom:16px">Meeting Briefing</h3>
+        <div class="v-stack gap-12">
+          <div class="h-stack gap-8 items-center"><span class="text-orange">👤</span><p class="body-small" style="color:var(--text)">Attendee backgrounds and recent activity</p></div>
+          <div class="h-stack gap-8 items-center"><span class="text-blue">📋</span><p class="body-small" style="color:var(--text)">Key topics and open items</p></div>
+          <div class="h-stack gap-8 items-center"><span class="text-green">🎯</span><p class="body-small" style="color:var(--text)">Suggested talking points</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- PART 4 DIVIDER -->
+<section class="slide slide-section-divider" data-title="Part 4: Your Turn">
+  <div class="center-content">
+    <div class="animate-in divider-line"></div>
+    <p class="animate-in part-label">Part 4</p>
+    <h1 class="animate-in" style="font-weight:300;font-size:clamp(48px,6vw,88px);line-height:1.05">
+      Your <span class="text-orange" style="font-style:italic;font-weight:700">Turn</span>
+    </h1>
+    <div class="animate-in pill-row" style="margin-top:40px">
+      <span class="pill">📂 Set Up Workspace</span>
+      <span class="pill">📝 Create Configs</span>
+      <span class="pill">🔗 Connect Tools</span>
+      <span class="pill">▶️ Run First Workflow</span>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Ask Claude to Interview You -->
+<section class="slide" data-title="Claude Interviews You">
+  <div class="section-marker animate-in">Workshop Exercise</div>
+  <h1 class="animate-in display-medium" style="margin-bottom:8px">Let Claude Build Your OS</h1>
+  <p class="animate-in body-medium text-gray" style="margin-bottom:40px">Paste one prompt. Answer 5-10 questions. Claude creates your whole system.</p>
+  <div class="animate-in grid-3" style="max-width:900px">
+    <div class="card" style="text-align:center;padding:32px">
+      <div class="num-badge num-badge-lg" style="margin:0 auto 16px">1</div>
+      <h4 style="font-weight:600;font-size:16px;margin-bottom:8px">Paste the prompt</h4>
+      <p class="body-small">Claude starts interviewing you about your role, goals, and workflows</p>
+    </div>
+    <div class="card" style="text-align:center;padding:32px">
+      <div class="num-badge num-badge-lg" style="margin:0 auto 16px;background:var(--blue)">2</div>
+      <h4 style="font-weight:600;font-size:16px;margin-bottom:8px">Answer naturally</h4>
+      <p class="body-small">Describe your work like you're explaining it to a new colleague</p>
+    </div>
+    <div class="card" style="text-align:center;padding:32px">
+      <div class="num-badge num-badge-lg" style="margin:0 auto 16px;background:var(--green)">3</div>
+      <h4 style="font-weight:600;font-size:16px;margin-bottom:8px">Claude creates files</h4>
+      <p class="body-small">about-me.md, writing-style.md, folder structure — all generated</p>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 47: Hands-On -->
+<section class="slide" data-title="Hands-On Exercise">
+  <div class="section-marker animate-in">Workshop Exercise</div>
+  <h1 class="animate-in display-medium" style="margin-bottom:8px">Hands-On: Build & Execute</h1>
+  <p class="animate-in body-medium text-gray" style="margin-bottom:48px">Set up your environment and run your first autonomous workflow.</p>
+  <div class="animate-in v-stack gap-32" style="max-width:700px">
+    <div class="h-stack gap-20">
+      <div class="num-badge num-badge-lg">1</div>
+      <div>
+        <h4 style="font-weight:700;margin-bottom:4px">Create Context Files</h4>
+        <p class="body-medium text-gray">Initialize your root directory with markdown files</p>
+      </div>
+    </div>
+    <div class="h-stack gap-20">
+      <div class="num-badge num-badge-lg" style="background:var(--blue)">2</div>
+      <div>
+        <h4 style="font-weight:700;margin-bottom:4px">Build Folder Structure</h4>
+        <p class="body-medium text-gray">Create subfolders for projects, templates, and about-me</p>
+      </div>
+    </div>
+    <div class="h-stack gap-20">
+      <div class="num-badge num-badge-lg" style="background:var(--green)">3</div>
+      <div>
+        <h4 style="font-weight:700;margin-bottom:4px">Connect Tools</h4>
+        <p class="body-medium text-gray">Go to Customize > Connectors. Authenticate at least one.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 48: Compounding effect -->
+<section class="slide slide-big-statement" data-title="Compounding Effect">
+  <div class="center-content">
+    <div class="animate-in section-marker" style="justify-content:center;margin-bottom:32px">Expectation Setting</div>
+    <h1 class="animate-in statement" style="font-size:clamp(28px,3.5vw,48px);max-width:800px">
+      Day 1 it feels like a good chat<br>with file access.
+    </h1>
+    <h1 class="animate-in statement text-orange" style="font-size:clamp(28px,3.5vw,48px);max-width:800px;margin-top:32px">
+      After 1-2 weeks it becomes<br>something else entirely.
+    </h1>
+    <p class="animate-in body-large text-gray" style="margin-top:32px;max-width:600px">
+      The system learns. The prompts compound. The outputs get better every day.
+    </p>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- What about Claude Code? -->
+<section class="slide" data-title="Claude Code">
+  <h1 class="animate-in display-medium" style="margin-bottom:8px">What about Claude Code?</h1>
+  <p class="animate-in body-large text-gray" style="margin-bottom:32px">Everything we covered works with Claude Code too — same folder, same files.</p>
+  <div class="animate-in" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px">
+    <div class="card" style="padding:24px;text-align:center">
+      <h4 style="font-weight:700;font-size:16px;margin-bottom:16px">In the Desktop app</h4>
+      <img src="assets/screenshots/claude-code-app.png" alt="Claude Code in app" class="screenshot" style="max-width:100%;max-height:35vh">
+      <p class="body-small" style="margin-top:12px;color:var(--text)">Switch to the "Code" tab</p>
+    </div>
+    <div class="card" style="padding:24px;text-align:center">
+      <h4 style="font-weight:700;font-size:16px;margin-bottom:16px">In the Terminal</h4>
+      <img src="assets/screenshots/claude-code-terminal.png" alt="Claude Code in terminal" class="screenshot" style="max-width:100%;max-height:35vh">
+      <p class="body-small" style="margin-top:12px;color:var(--text)">Right-click folder → "New Terminal"</p>
+    </div>
+  </div>
+  <div data-step="1" class="card" style="margin-top:24px;max-width:900px;padding:20px;background:var(--light-gray);border:none;text-align:center">
+    <p class="body-medium" style="font-weight:600">You don't have to choose. Same folder works with <span class="text-orange">Cowork</span>, <span class="text-orange">Claude Code</span>, <span class="text-orange">Codex</span>, or <span class="text-orange">Cursor</span>.</p>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+
+
+<!-- SLIDE 51: What's Next? -->
+<section class="slide" data-title="What's Next?">
+  <div class="center-content">
+    <h1 class="animate-in" style="font-weight:700;font-size:clamp(36px,5vw,64px)">What's Next?</h1>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- Next Steps -->
+<section class="slide" data-title="Next Steps">
+  <h1 class="animate-in display-medium" style="margin-bottom:40px">Keep building your system</h1>
+  <div class="animate-in" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px">
+    <div class="v-stack gap-20">
+      <div class="h-stack gap-12 items-center"><div class="icon-circle-sm icon-orange">🗺️</div><p class="body-medium">Map your daily routines and processes</p></div>
+      <div class="h-stack gap-12 items-center"><div class="icon-circle-sm icon-orange">🎤</div><p class="body-medium">Ask Claude to interview you and build your context</p></div>
+      <div class="h-stack gap-12 items-center"><div class="icon-circle-sm icon-orange">⚙️</div><p class="body-medium">Run a workflow and evaluate the output</p></div>
+    </div>
+    <div class="v-stack gap-20">
+      <div class="h-stack gap-12 items-center"><div class="icon-circle-sm icon-blue">📝</div><p class="body-medium">Write feedback after every run</p></div>
+      <div class="h-stack gap-12 items-center"><div class="icon-circle-sm icon-blue">⏰</div><p class="body-medium">Schedule your first automated action</p></div>
+      <div class="h-stack gap-12 items-center"><div class="icon-circle-sm icon-blue">📂</div><p class="body-medium">Import context from Slack, emails, Drive</p></div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+<!-- SLIDE 54: Thank You -->
+<section class="slide" data-title="Thank You">
+  <div class="center-content">
+    <h1 class="animate-in" style="font-weight:300;font-size:clamp(56px,8vw,120px);font-style:italic;color:var(--orange)">Thank You</h1>
+    <div class="animate-in h-stack gap-64 items-start" style="margin-top:56px">
+      <div style="text-align:center">
+        <h3 style="font-weight:700;font-size:24px;margin-bottom:16px">Join my newsletter</h3>
+        <div class="card" style="padding:20px;display:inline-block">
+          <img src="assets/screenshots/image150.png" alt="QR Code" style="width:180px;height:180px">
+        </div>
+        <p style="font-size:18px;color:var(--orange);margin-top:12px;font-weight:600">aiwithamitay.com</p>
+      </div>
+      <div style="text-align:center">
+        <h3 style="font-weight:700;font-size:24px;margin-bottom:16px">Follow my LinkedIn</h3>
+        <div class="card" style="padding:16px;display:inline-block">
+          <img src="assets/screenshots/image159.png" alt="LinkedIn profile" class="screenshot" style="max-width:320px">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Mastering Claude Cowork</span><span></span></div>
+</section>
+
+</div><!-- end .deck -->
+</div><!-- end .main-area -->
+</div><!-- end .presentation-wrapper -->
+
+<div class="nav-hint" id="navHint">← → to navigate · F for fullscreen</div>
+
+<script src="engine.js"></script>
+</body>
+</html>
