@@ -1,17 +1,43 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code when working on the Cowork Presentation.
+This is the **template** for Amitay's Claude Cowork workshop presentations. Each client gets a customized copy.
+
+## How to Create a Client Version
+
+1. **Copy the template folder:**
+   ```
+   cp -r PROJECTS/Cowork-Presentation PROJECTS/CUSTOMERS/{client}/cowork-workshop
+   ```
+
+2. **Read the prep call notes** (usually in `PROJECTS/CUSTOMERS/{client}/`)
+
+3. **Customize these slides** based on the prep call:
+   - **Slide 4 (Agenda)**: Adjust timing per workshop length
+   - **Slides 17-19 (AI Chatbot Usage)**: Swap generic examples for the client's actual use cases
+   - **Slides 28-29 (ChatGPT/Gemini)**: Mention which tools they already use
+   - **Slides 38-42 (Workspace)**: Adjust folder structure examples to their domain
+   - **Slides 55-57 (Use Cases)**: Replace with use cases relevant to their industry/role
+   - **Slide 59 (Claude Interviews You)**: Customize the interview prompt for their context
+   - **Hide irrelevant slides** using the sidebar toggle (persists in localStorage)
+
+4. **Things NOT to change**: LLM fundamentals (7-16), the method explanation (31-34), skills/connectors technical slides (43-53)
+
+5. **Push to a client-specific branch** if needed:
+   ```
+   git checkout -b workshop/{client-name}
+   ```
 
 ## Project Structure
 
 ```
-Cowork-Presentation/
-├── index.html          ← Slides only (no CSS/JS) — edit slides here
-├── styles.css          ← Design system CSS — edit styles here
-├── engine.js           ← Navigation, sidebar, steps, hide/show, present mode
-├── DESIGN-SYSTEM.md    ← Design system documentation
-├── CLAUDE.md           ← This file
-└── assets/screenshots/ ← All images
+Cowork-Presentation/          ← THIS IS THE TEMPLATE
+├── index.html                ← Slides (no CSS/JS)
+├── styles.css                ← Design system CSS
+├── engine.js                 ← Navigation, sidebar, present mode, hide/show
+├── DESIGN-SYSTEM.md          ← Design system docs
+├── learnings.md              ← Design decisions and content principles
+├── CLAUDE.md                 ← This file
+└── assets/screenshots/       ← All images
 ```
 
 ## How to Edit

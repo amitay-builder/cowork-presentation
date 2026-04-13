@@ -1,10 +1,18 @@
 # Cowork Presentation — Learnings
 
 ## Facts
+- This is a TEMPLATE presentation — each client workshop gets a customized copy
 - The presentation is for Amitay's Claude Cowork workshops (3-hour format)
-- Source content comes from: original PPTX deck (51 slides), workshop transcript (Inficon), newsletter article (aiwithamitay.com/p/cowork)
+- Source content: original PPTX deck, workshop transcript (Inficon), newsletter article (aiwithamitay.com/p/cowork)
 - Audience is mostly non-technical (PMs, marketers, ops) — explain technical terms simply
-- The newsletter article has the best-structured explanation of Cowork — use it as a reference for flow and language
+- The newsletter article has the best-structured explanation of Cowork — use it as reference
+
+## Customization Workflow
+- Before each workshop: read the prep call notes, copy the template, customize per client
+- Slides to customize: Agenda timing, AI usage examples (17-19), tools they use (28-29), folder structure (38-42), use cases (55-57), interview prompt (59)
+- Slides that stay fixed: LLM fundamentals (7-16), method explanation (31-34), technical features (43-53)
+- Use the hide/show toggle to skip irrelevant slides — don't delete them from the template
+- Client versions can live as git branches (workshop/{client-name}) or as folder copies under CUSTOMERS/
 
 ## Design Decisions
 - Single font: Poppins everywhere. No secondary font.
