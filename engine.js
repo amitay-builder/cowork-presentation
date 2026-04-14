@@ -1,6 +1,6 @@
 /* ============================================
    SLIDE ENGINE + SIDEBAR + STEP ANIMATIONS
-   + Present mode, Hide/Show slides
+   + Edit/Present modes, Hide/Show slides
    ============================================ */
 (function() {
   const deck = document.getElementById('deck');
@@ -9,6 +9,16 @@
   const navHint = document.getElementById('navHint');
   const sidebar = document.getElementById('sidebar');
   let current = 0;
+
+  // ==========================================
+  // SIDEBAR MODE (edit vs present)
+  // ==========================================
+  const MODE_KEY = 'cowork-sidebar-mode';
+  let editMode = localStorage.getItem(MODE_KEY) !== 'present';
+
+  function saveMode() {
+    localStorage.setItem(MODE_KEY, editMode ? 'edit' : 'present');
+  }
 
   // ==========================================
   // HIDDEN SLIDES (persisted in localStorage)
@@ -67,73 +77,157 @@
   });
 
   // ==========================================
-  // SIDEBAR (with hide toggle + present button)
+  // SIDEBAR
   // ==========================================
+  // Collapse state
+  const COLLAPSE_KEY = 'cowork-sidebar-collapsed';
+  let collapsed = localStorage.getItem(COLLAPSE_KEY) === 'true';
+
+  function applyCollapsed() {
+    sidebar.classList.toggle('collapsed', collapsed);
+    localStorage.setItem(COLLAPSE_KEY, collapsed);
+  }
+
   function buildSidebar() {
     sidebar.innerHTML = '';
 
-    // Present button
-    const presentBtn = document.createElement('button');
-    presentBtn.className = 'present-btn';
-    presentBtn.textContent = '▶  Present';
-    presentBtn.addEventListener('click', () => {
+    // Collapse toggle button (always visible)
+    const collapseBtn = document.createElement('button');
+    collapseBtn.className = 'sidebar-collapse-btn';
+    collapseBtn.innerHTML = collapsed ? '☰' : '◂';
+    collapseBtn.title = collapsed ? 'Expand sidebar' : 'Collapse sidebar';
+    collapseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      collapsed = !collapsed;
+      applyCollapsed();
+      collapseBtn.innerHTML = collapsed ? '☰' : '◂';
+      collapseBtn.title = collapsed ? 'Expand sidebar' : 'Collapse sidebar';
+    });
+    sidebar.appendChild(collapseBtn);
+
+    // Collapsed icon (clickable to expand)
+    const collapsedIcon = document.createElement('div');
+    collapsedIcon.className = 'sidebar-collapsed-icon';
+    collapsedIcon.innerHTML = '☰';
+    collapsedIcon.addEventListener('click', () => {
+      collapsed = false;
+      applyCollapsed();
+      buildSidebar();
+      showSlide(current, true);
+    });
+    sidebar.appendChild(collapsedIcon);
+
+    // Top controls
+    const controls = document.createElement('div');
+    controls.className = 'sidebar-controls';
+
+    // Fullscreen button
+    const fullscreenBtn = document.createElement('button');
+    fullscreenBtn.className = 'sidebar-fullscreen-btn';
+    fullscreenBtn.innerHTML = '▶ Fullscreen';
+    fullscreenBtn.addEventListener('click', () => {
       document.documentElement.requestFullscreen();
     });
-    sidebar.appendChild(presentBtn);
+    controls.appendChild(fullscreenBtn);
+
+    // Mode toggle
+    const modeToggle = document.createElement('button');
+    modeToggle.className = 'sidebar-mode-toggle' + (editMode ? ' mode-edit' : ' mode-present');
+    modeToggle.innerHTML = editMode
+      ? '<span class="mode-icon">✏️</span> Edit Mode'
+      : '<span class="mode-icon">📺</span> Present Mode';
+    modeToggle.addEventListener('click', () => {
+      editMode = !editMode;
+      saveMode();
+      buildSidebar();
+      // Re-sync current slide after mode switch
+      const vis = getVisibleSlides();
+      if (current >= vis.length) current = Math.max(0, vis.length - 1);
+      showSlide(current, true);
+    });
+    controls.appendChild(modeToggle);
+
+    sidebar.appendChild(controls);
 
     // Slide count
     const visible = getVisibleSlides();
     const countEl = document.createElement('div');
     countEl.className = 'sidebar-count';
-    countEl.textContent = visible.length + ' / ' + allSlides.length + ' slides';
+    countEl.textContent = editMode
+      ? visible.length + ' / ' + allSlides.length + ' slides'
+      : visible.length + ' slides';
     sidebar.appendChild(countEl);
 
-    // Slide items
-    allSlides.forEach((slide, i) => {
-      const title = slide.getAttribute('data-title') || ('Slide ' + (i + 1));
-      const isHidden = hiddenSlides.has(i);
-      const item = document.createElement('div');
-      item.className = 'sidebar-item' + (isHidden ? ' sidebar-hidden' : '');
-      item.innerHTML =
-        '<div class="sidebar-num">' + (i + 1) + '</div>' +
-        '<div class="sidebar-label">' + title + '</div>' +
-        '<div class="sidebar-toggle" title="' + (isHidden ? 'Show slide' : 'Hide slide') + '">' +
-        (isHidden ? '○' : '●') + '</div>';
+    // Slide list
+    const list = document.createElement('div');
+    list.className = 'sidebar-list';
 
-      // Click label to navigate
-      item.querySelector('.sidebar-label').addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (!isHidden) {
+    if (editMode) {
+      // EDIT MODE: show all slides, with visibility toggles
+      allSlides.forEach((slide, i) => {
+        const title = slide.getAttribute('data-title') || ('Slide ' + (i + 1));
+        const isHidden = hiddenSlides.has(i);
+        const item = document.createElement('div');
+        item.className = 'sidebar-item' + (isHidden ? ' sidebar-hidden' : '');
+        item.dataset.absIndex = i;
+
+        item.innerHTML =
+          '<button class="sidebar-eye" title="' + (isHidden ? 'Show slide' : 'Hide slide') + '">' +
+          (isHidden ? '👁‍🗨' : '👁') + '</button>' +
+          '<div class="sidebar-num">' + (i + 1) + '</div>' +
+          '<div class="sidebar-label">' + title + '</div>';
+
+        // Click the eye to toggle visibility
+        item.querySelector('.sidebar-eye').addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (hiddenSlides.has(i)) {
+            hiddenSlides.delete(i);
+          } else {
+            hiddenSlides.add(i);
+          }
+          saveHidden();
+          buildSidebar();
+          const vis = getVisibleSlides();
+          if (current >= vis.length) current = Math.max(0, vis.length - 1);
+          showSlide(current, true);
+        });
+
+        // Click anywhere else on the row to navigate
+        item.addEventListener('click', () => {
+          if (!isHidden) {
+            const visIdx = getVisibleIndex(i);
+            showSlide(visIdx, true);
+          }
+        });
+
+        list.appendChild(item);
+      });
+    } else {
+      // PRESENT MODE: only visible slides, clean list, full-row click
+      let visNum = 0;
+      allSlides.forEach((slide, i) => {
+        if (hiddenSlides.has(i)) return;
+        visNum++;
+        const title = slide.getAttribute('data-title') || ('Slide ' + (i + 1));
+        const item = document.createElement('div');
+        item.className = 'sidebar-item';
+        item.dataset.absIndex = i;
+
+        item.innerHTML =
+          '<div class="sidebar-num">' + visNum + '</div>' +
+          '<div class="sidebar-label">' + title + '</div>';
+
+        // Entire row navigates
+        item.addEventListener('click', () => {
           const visIdx = getVisibleIndex(i);
           showSlide(visIdx, true);
-        }
-      });
-      item.querySelector('.sidebar-num').addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (!isHidden) {
-          const visIdx = getVisibleIndex(i);
-          showSlide(visIdx, true);
-        }
-      });
+        });
 
-      // Click toggle to hide/show
-      item.querySelector('.sidebar-toggle').addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (hiddenSlides.has(i)) {
-          hiddenSlides.delete(i);
-        } else {
-          hiddenSlides.add(i);
-        }
-        saveHidden();
-        buildSidebar();
-        // Re-show current slide (index may have shifted)
-        const vis = getVisibleSlides();
-        if (current >= vis.length) current = vis.length - 1;
-        showSlide(current, true);
+        list.appendChild(item);
       });
+    }
 
-      sidebar.appendChild(item);
-    });
+    sidebar.appendChild(list);
   }
 
   // ==========================================
@@ -173,8 +267,8 @@
 
     // Update sidebar active state
     const absIndex = allSlides.indexOf(visible[visibleIndex]);
-    sidebar.querySelectorAll('.sidebar-item').forEach((item, i) => {
-      item.classList.toggle('active', i === absIndex);
+    sidebar.querySelectorAll('.sidebar-item').forEach((item) => {
+      item.classList.toggle('active', parseInt(item.dataset.absIndex) === absIndex);
     });
     const activeItem = sidebar.querySelector('.sidebar-item.active');
     if (activeItem) activeItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
@@ -233,13 +327,10 @@
     if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
   });
 
-  // Click navigation (main area only)
+  // Click navigation (main area only) — any click advances
   document.querySelector('.main-area').addEventListener('click', (e) => {
     if (e.target.closest('a, button, input, .sidebar')) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
-    if (x > 0.65) next();
-    else if (x < 0.35) prev();
+    next();
   });
 
   // ==========================================
@@ -252,6 +343,7 @@
     if (n >= 1) current = n - 1;
   }
 
+  applyCollapsed();
   buildSidebar();
   showSlide(current);
   setTimeout(() => navHint.classList.add('hidden'), 5000);
