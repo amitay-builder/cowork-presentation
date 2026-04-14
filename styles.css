@@ -503,6 +503,11 @@ p, li, span, code, div {
   pointer-events: auto;
 }
 
+/* Ecosystem highlight animation */
+.ecosystem-focused .ecosystem-card { opacity: 0.3; }
+.ecosystem-focused .ecosystem-highlight { opacity: 1; border: 2px solid var(--orange); }
+.ecosystem-focused .ecosystem-highlight .ecosystem-label { opacity: 1; }
+
 /* Fade-out overlay (for stacking images where top fades to reveal bottom) */
 [data-step-hide] {
   transition: opacity 0.8s ease;

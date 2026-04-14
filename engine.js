@@ -286,6 +286,9 @@
       group.show.forEach(el => el.classList.add('step-visible'));
       group.hide.forEach(el => el.classList.add('step-hidden'));
       info.current++;
+      // Ecosystem slide: highlight Cowork on step
+      const eco = visible[current].querySelector('.ecosystem-highlight');
+      if (eco) visible[current].querySelector('.center-content').classList.add('ecosystem-focused');
       return;
     }
     if (current < visible.length - 1) showSlide(current + 1);
@@ -300,6 +303,9 @@
       const group = info.groups[info.current];
       group.show.forEach(el => el.classList.remove('step-visible'));
       group.hide.forEach(el => el.classList.remove('step-hidden'));
+      // Ecosystem slide: remove highlight when stepping back
+      const ecoEl = visible[current].querySelector('.ecosystem-focused');
+      if (ecoEl && info.current === 0) ecoEl.classList.remove('ecosystem-focused');
       return;
     }
     if (current > 0) showSlide(current - 1, true);
